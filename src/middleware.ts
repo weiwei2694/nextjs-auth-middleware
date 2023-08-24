@@ -30,8 +30,8 @@ export function middleware(req: NextRequest) {
         }
     }
 
-    // If the request URL starts with /auth/login
-    if (startsWith("/auth/login"))
+    // If the session exist and request URL starts with /auth/login
+    if (session && startsWith("/auth/login"))
         // Make a redirect to the dashboard page after logging in
         return redirect("/dashboard", req.url);
 }
