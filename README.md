@@ -1,6 +1,7 @@
 # Creating Route Protection Using Middleware
 
 ## Middleware Code Preview
+
 ```js
 // Import the NextResponse module from next/server
 import { NextResponse } from "next/server";
@@ -34,13 +35,13 @@ export function middleware(req: NextRequest) {
         }
     }
 
-    // If the request URL starts with /auth/login
-    if (startsWith("/auth/login"))
+    // If the session exist and request URL starts with /auth/login
+    if (session && startsWith("/auth/login"))
         // Make a redirect to the dashboard page after logging in
         return redirect("/dashboard", req.url);
 }
-
 ```
 
 ## Check Complete Documentation on How to Use Middleware
-- [Middleware](https://nextjs.org/docs/app/building-your-application/routing/middleware#convention)
+
+-   [Middleware](https://nextjs.org/docs/app/building-your-application/routing/middleware#convention)
